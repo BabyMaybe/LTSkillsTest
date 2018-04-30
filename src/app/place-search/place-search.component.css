@@ -1,0 +1,21 @@
+:host {
+	position:absolute;
+	z-index: 1;
+	width: 100%;
+	display: flex;
+	justify-content:center;
+}
+
+#search-container {
+	margin-top: 10px;
+}
+
+#searchbox {
+	border: solid dodgerblue 2px;
+	font-size: 20px;
+}
+
+button {
+   font-size: 15px;
+   padding: 5px
+}

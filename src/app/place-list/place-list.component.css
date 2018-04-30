@@ -1,0 +1,36 @@
+:host {
+	height: 100%;
+}
+
+#results {
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#search_header {
+	text-align: center;
+}
+
+#search_buttons{
+	display: flex;	
+}
+
+.search_btn {
+	flex: 1 1 auto;
+	text-align: center;
+	padding: 10px;
+	border: solid blue 3px;
+    margin: 3px;
+}
+
+.search_btn:hover {
+	border-color: lightblue;
+	cursor: pointer;
+}
+
+.search_btn:active {
+	border-color: white;
+}

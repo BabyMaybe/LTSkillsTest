@@ -1,0 +1,30 @@
+:host {
+	flex-basis: 100%;
+}
+
+#details {  
+
+  background: purple;
+  transition: all 1s;
+  display: flex;
+}
+
+.hidden {
+	height: 0px;
+}
+
+.expanded {
+	height: 200px;
+}
+
+#details_left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 15px;
+}
+
+#details_right {
+	text-align: center;
+	flex-grow: 1;
+}

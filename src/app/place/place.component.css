@@ -1,0 +1,8 @@
+.result {
+  background: green;
+  margin-bottom: 2px;
+  text-align: center;
+  padding: 5px;
+  list-style: none;
+  flex: 1 1 50px;
+}

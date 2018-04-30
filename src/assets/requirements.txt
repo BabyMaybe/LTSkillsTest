@@ -1,0 +1,19 @@
+
+Using angular, google maps, google places api, create a simple page where the user can search for places of interest near dupont circle, 
+showing up to the first ten results. 
+Extra credit for paginating through the results and providing some sort of filter or sort.  
+Extra extra credit for showing pins on a map and clicking a pin shows the name of the place and a few interesting details about it in a region below the map 
+(it should be a separate component).  
+
+At minimum, be able to discuss how you'd approach the extra and extra extra credit exercises.  
+Storing the code in a github branch is the best way for sharing.
+
+
+[X] Map Showing Dupont Circle
+[ ] Search for places of interest near Dupont Circle
+[ ] Limit to 10 results 
+[ ] Paginate through results
+[ ] Filter results
+[ ] Sort results
+[ ] Pins for locations of results
+[ ] Card with details of location on Pin Click
