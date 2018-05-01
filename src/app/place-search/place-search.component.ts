@@ -80,7 +80,7 @@ export class PlaceSearchComponent implements OnInit {
     let component = this;
 
     let newPlaces = this.service.textSearch({
-        location: this.dupont,
+        location: this.map.getCenter(),
         radius: 200,
         query: query.query
       },
