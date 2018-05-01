@@ -17,6 +17,7 @@ export class PlaceSearchComponent implements OnInit {
   service;
   infoWindow;
   markers = [];
+  bounds;
 
   constructor(private placeResultsService: PlaceResultsService,
               private searchService: SearchService ) {}
@@ -29,7 +30,8 @@ export class PlaceSearchComponent implements OnInit {
 
     this.service = new google.maps.places.PlacesService(this.map);
     this.infoWindow = new google.maps.InfoWindow();
-
+    this.bounds = new google.maps.LatLngBounds();
+    
     let component = this;
     console.log('getting nearby places');
 
@@ -60,11 +62,16 @@ export class PlaceSearchComponent implements OnInit {
       component.infoWindow.setContent(place.name);
       component.infoWindow.open(component.map, this);
     });
+    
+    component.bounds.extend(marker.getPosition());
+  }
+  
   clearMarkers() {
     for (let i=0; i<this.markers.length; i++) {
       this.markers[i].setMap(null);
     }
     this.markers = [];
+    this.bounds = new google.maps.LatLngBounds();
   }
   
   onSubmit(query) {
@@ -84,6 +91,7 @@ export class PlaceSearchComponent implements OnInit {
             for (let i=0; i < 10; i++) {
               component.drawMarker(results[i], component);
             }
+            component.map.fitBounds(component.bounds);
             console.log('updated service in search');
           }
       });
