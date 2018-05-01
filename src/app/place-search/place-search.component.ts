@@ -16,6 +16,7 @@ export class PlaceSearchComponent implements OnInit {
   form;
   service;
   infoWindow;
+  markers = [];
 
   constructor(private placeResultsService: PlaceResultsService,
               private searchService: SearchService ) {}
@@ -52,11 +53,18 @@ export class PlaceSearchComponent implements OnInit {
        map: component.map,
        position: place.geometry.location
     });
-
+    
+    component.markers.push(marker);
+    
     google.maps.event.addListener(marker, 'click', function() {
       component.infoWindow.setContent(place.name);
       component.infoWindow.open(component.map, this);
     });
+  clearMarkers() {
+    for (let i=0; i<this.markers.length; i++) {
+      this.markers[i].setMap(null);
+    }
+    this.markers = [];
   }
   
   onSubmit(query) {
@@ -72,6 +80,10 @@ export class PlaceSearchComponent implements OnInit {
         function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             component.placeResultsService.updatePlaces(results.slice(0, 10));
+            component.clearMarkers();
+            for (let i=0; i < 10; i++) {
+              component.drawMarker(results[i], component);
+            }
             console.log('updated service in search');
           }
       });
