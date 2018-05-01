@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { PlaceComponent } from './place/place.component';
 import { PlaceListComponent } from './place-list/place-list.component';
 import { PlaceSearchComponent } from './place-search/place-search.component';
-import { PlaceResultsService } from './place-results.service';
-import { SearchService } from './search.service';
+import { PlaceResultsService } from './services/place-results.service';
+import { SearchService } from './services/search.service';
 
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { DetailsPanelComponent } from './details-panel/details-panel.component';
@@ -20,7 +20,7 @@ import { DetailsPanelComponent } from './details-panel/details-panel.component';
     PlaceListComponent,
     PlaceSearchComponent,
     GoogleMapComponent,
-    DetailsPanelComponent
+    DetailsPanelComponent,
   ],
   imports: [
     BrowserModule,

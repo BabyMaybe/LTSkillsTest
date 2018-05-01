@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { } from '@types/googlemaps';
 
-import { SearchService } from '../search.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-google-map',

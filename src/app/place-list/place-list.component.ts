@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { PlaceResultsService } from '../place-results.service';
+import { PlaceResultsService } from '../services/place-results.service';
 
 @Component({
   selector: 'app-place-list',

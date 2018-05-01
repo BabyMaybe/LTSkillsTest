@@ -26,7 +26,7 @@ export class SearchService {
 
   getNearby() {
     console.log('in nearby');
-    let component = this;
+    const component = this;
     this.service.nearbySearch({
         location: this.dupont,
         radius: 200,

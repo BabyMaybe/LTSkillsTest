@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { } from '@types/googlemaps';
 
-import { PlaceResultsService } from '../place-results.service';
-import { SearchService } from '../search.service';
+import { PlaceResultsService } from '../services/place-results.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-place-search',
