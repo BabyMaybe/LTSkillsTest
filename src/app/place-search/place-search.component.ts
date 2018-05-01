@@ -31,8 +31,8 @@ export class PlaceSearchComponent implements OnInit {
     this.service = new google.maps.places.PlacesService(this.map);
     this.infoWindow = new google.maps.InfoWindow();
     this.bounds = new google.maps.LatLngBounds();
-    
-    let component = this;
+
+    const component = this;
     console.log('getting nearby places');
 
     this.service.nearbySearch({
@@ -77,7 +77,7 @@ export class PlaceSearchComponent implements OnInit {
   onSubmit(query) {
     console.log(query.query);
 
-    let component = this;
+    const component = this;
 
     let newPlaces = this.service.textSearch({
         location: this.map.getCenter(),
