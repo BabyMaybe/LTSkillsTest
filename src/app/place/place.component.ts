@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PlaceComponent implements OnInit {
   @Input() place;
   dollars;
-   
+
 
   constructor() { }
 

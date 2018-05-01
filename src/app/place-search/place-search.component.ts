@@ -42,7 +42,7 @@ export class PlaceSearchComponent implements OnInit {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             component.placeResultsService.updatePlaces(results.slice(0, 10));
             component.placeResultsService.pagination = pagination;
-            for (let i=0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) {
               component.drawMarker(results[i], component);
             }
           }
@@ -55,25 +55,25 @@ export class PlaceSearchComponent implements OnInit {
        map: component.map,
        position: place.geometry.location
     });
-    
+
     component.markers.push(marker);
-    
+
     google.maps.event.addListener(marker, 'click', function() {
       component.infoWindow.setContent(place.name);
       component.infoWindow.open(component.map, this);
     });
-    
+
     component.bounds.extend(marker.getPosition());
   }
-  
+
   clearMarkers() {
-    for (let i=0; i<this.markers.length; i++) {
+    for (let i = 0; i < this.markers.length; i++) {
       this.markers[i].setMap(null);
     }
     this.markers = [];
     this.bounds = new google.maps.LatLngBounds();
   }
-  
+
   onSubmit(query) {
     console.log(query.query);
 
@@ -88,7 +88,7 @@ export class PlaceSearchComponent implements OnInit {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             component.placeResultsService.updatePlaces(results.slice(0, 10));
             component.clearMarkers();
-            for (let i=0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) {
               component.drawMarker(results[i], component);
             }
             component.map.fitBounds(component.bounds);
