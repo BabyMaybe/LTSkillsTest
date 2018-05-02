@@ -1,5 +1,5 @@
-<li class='result'>
   <div>{{ place.name }}</div> 
+<li class='result'  (click)="moreInfo()">
 
   <div *ngIf="place.rating">{{ place.rating }} out of 5 Stars!</div>
 

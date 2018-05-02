@@ -7,6 +7,7 @@ import { PlaceComponent } from './place/place.component';
 import { PlaceListComponent } from './place-list/place-list.component';
 import { PlaceSearchComponent } from './place-search/place-search.component';
 import { PlaceResultsService } from './services/place-results.service';
+import { PlaceDetailService } from './services/place-detail.service';
 import { SearchService } from './services/search.service';
 
 import { GoogleMapComponent } from './google-map/google-map.component';
@@ -28,6 +29,7 @@ import { DetailsPanelComponent } from './details-panel/details-panel.component';
   ],
   providers: [
     PlaceResultsService,
+    PlaceDetailService,
     SearchService
   ],
   bootstrap: [AppComponent]
