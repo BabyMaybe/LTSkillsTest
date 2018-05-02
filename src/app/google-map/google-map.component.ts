@@ -18,11 +18,15 @@ export class GoogleMapComponent implements OnInit {
   ngOnInit() {
 
     const mapProp = {
-      center: new google.maps.LatLng(38.909653, -77.043432),
-      zoom: 18,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      center: new google.maps.LatLng(this.dupont.lat, this.dupont.lng),
+      disableDefaultUI: true,
+      mapTypeControl: false,
+      zoomControl: true,
+      zoom: 18
     };
+
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+
     this.searchService.map = this.map;
     this.searchService.service = new google.maps.places.PlacesService(this.map);
     this.searchService.dupont = this.dupont;
