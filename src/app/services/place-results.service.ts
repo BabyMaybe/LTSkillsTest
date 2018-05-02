@@ -7,20 +7,16 @@ export class PlaceResultsService {
   places;
   pagination;
 
-  placesChanged = new Subject<any>();
+  private placesSource = new Subject<any>();
+
+  placesItem = this.placesSource.asObservable();
 
 
   updatePlaces(newPlaces) {
-    console.log('updating with some new places');
-    console.log(newPlaces);
-    this.placesChanged.next(newPlaces);
+    this.placesSource.next(newPlaces);
   }
 
   constructor() {
-    this.placesChanged.subscribe(value => {
-      console.log('notified of changing values');
-      this.places = value;
-    });
   }
 
 }
