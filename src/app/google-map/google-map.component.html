@@ -1,4 +1,9 @@
 <app-place-search 
-[map]="map"
-[dupont]="dupont"></app-place-search>
-<div #gmap id="gmap"></div>
+  [map]="map"
+  [dupont]="dupont">
+</app-place-search>
+
+<div id="map-container">
+  <div #gmap id="gmap"></div>
+  <app-details-panel></app-details-panel>
+</div>

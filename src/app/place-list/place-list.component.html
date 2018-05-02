@@ -1,15 +1,17 @@
 <header>
   <h2 id="search_header">Nearby Places</h2>
 </header>
+
 <ul id="results">
   <app-place
     *ngFor="let place of places"
     [place]="place">
-   </app-place>
+  </app-place>
 </ul>
+
 <div id="search_buttons">
-	<div class="search_btn" id="previous_btn">&lt;</div>
-	<div class="search_btn" id="cost_sort_btn">$</div>
-	<div class="search_btn" id="rate_sort_btn">*</div>
-	<div class="search_btn" id="next_btn"> &gt;</div>
+  <div class="search_btn" id="previous_btn"><i class="fas fa-chevron-left"></i></div>
+  <div class="search_btn" id="cost_sort_btn"><i class="fas fa-dollar-sign"></i></div>
+  <div class="search_btn" id="rate_sort_btn"><i class="fas fa-star"></i></div>
+  <div class="search_btn" id="next_btn"> <i class="fas fa-chevron-right"></i></div>
 </div>

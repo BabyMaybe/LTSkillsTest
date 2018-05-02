@@ -23,7 +23,6 @@ export class PlaceSearchComponent implements OnInit {
               private searchService: SearchService ) {}
 
   ngOnInit() {
-    console.log('initing search');
     this.form = new FormGroup({
       query: new FormControl('')
     });
@@ -33,14 +32,12 @@ export class PlaceSearchComponent implements OnInit {
     this.bounds = new google.maps.LatLngBounds();
 
     const component = this;
-    console.log('getting nearby places');
 
     this.service.nearbySearch({
           location: this.dupont,
           radius: 200
         }, function(results, status, pagination) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
-            component.placeResultsService.pagination = pagination;
             component.placeResultsService.updatePlaces(results.slice(1, 11));
             for (let i = 0; i < 10; i++) {
               component.drawMarker(results[i], component);
@@ -92,10 +89,8 @@ export class PlaceSearchComponent implements OnInit {
               component.drawMarker(results[i], component);
             }
             component.map.fitBounds(component.bounds);
-            console.log('updated service in search');
           }
       });
-
-
   }
+
 }
