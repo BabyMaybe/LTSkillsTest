@@ -1,7 +1,18 @@
   <div>{{ place.name }}</div> 
 <li class='result'  (click)="moreInfo()">
 
-  <div *ngIf="place.rating">{{ place.rating }} out of 5 Stars!</div>
+  <div *ngIf="place.rating" class="place-rate">{{ place.rating }} out of 5 Stars!</div>
+  
+  <div class="star-container">
 
-  <div *ngIf="dollars">{{ dollars }}</div>
+    <i *ngFor="let n of [1,2,3,4,5]"
+       [ngClass]="{'fas' : place.rating > n || place.rating < n && place.rating > n -.5,
+                   'fa-star': place.rating > n,
+                   'fa-star-half': place.rating < n && place.rating > n - 0.5}"></i> 
+  </div>
+
+  <div *ngIf="dollars" class="place-cost"> 
+    <span *ngFor="let char of dollars" class="dollar-sign">$</span> 
+  </div>
+
 </li>
