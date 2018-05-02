@@ -2,7 +2,9 @@
 	<form
 		[formGroup]="form"
 		(ngSubmit)="onSubmit(form.value)">
-		<input type="text" name="query" id="searchbox" formControlName="query">
-		<button type="submit">Search</button>
+		<div class="search-widget">
+			<input type="text" name="query" id="searchbox" formControlName="query" autofocus>
+			<button type="submit"><i class="fas fa-search"></i></button>
+		</div>
 	</form>
 </div>
