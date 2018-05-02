@@ -1,10 +1,17 @@
 :host {
-	flex: 1;
-	position: relative;
+  flex: 1;
+  position: relative;
+  min-height: 650px;
+}
+
+#map-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #gmap {
   height: 100%;
-  min-height: 650px;
   background: dodgerblue;
 }
+

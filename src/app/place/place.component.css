@@ -1,8 +1,24 @@
+:host {
+  flex: 1 0 92px;
+  border-bottom: solid white 3px;
+  display: flex;
+  flex-direction: column;
+}
+
 .result {
-  background: green;
-  margin-bottom: 2px;
   text-align: center;
-  padding: 5px;
+  padding: 7px;
   list-style: none;
-  flex: 1 1 50px;
+  margin-bottom: 0;
+  flex: 1 0 100%;
+}
+
+.result:hover {
+  background: limegreen;
+}
+
+.place-name {
+  color: initial;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
 }
