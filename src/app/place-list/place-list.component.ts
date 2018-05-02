@@ -15,14 +15,9 @@ export class PlaceListComponent implements OnInit {
   constructor(private placeResultsService: PlaceResultsService) {}
 
   ngOnInit() {
-    this.getPlaces();
-  }
-
-  getPlaces() {
-  this.placeResultsService.placesChanged.subscribe(value => {
-      console.log('list getting new values');
-      console.log(value);
-      this.places = value;
+    this.subscription = this.placeResultsService.placesItem.subscribe(places => {
+      this.places = places;
     });
   }
+
 }
