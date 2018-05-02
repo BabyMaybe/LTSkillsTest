@@ -40,8 +40,8 @@ export class PlaceSearchComponent implements OnInit {
           radius: 200
         }, function(results, status, pagination) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
-            component.placeResultsService.updatePlaces(results.slice(0, 10));
             component.placeResultsService.pagination = pagination;
+            component.placeResultsService.updatePlaces(results.slice(1, 11));
             for (let i = 0; i < 10; i++) {
               component.drawMarker(results[i], component);
             }
