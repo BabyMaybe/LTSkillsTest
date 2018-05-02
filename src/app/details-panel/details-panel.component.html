@@ -1,11 +1,20 @@
-<div id="details">
-	<div id="details_left">
-		<img src="https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png"/>
-		<h2>Business Name</h2>
-		<div>3 out of 5 stars</div>
-		<div>$$$</div>
+<div class="details-header">
+	
+	<img class="detail-icon" src="{{ place.icon }}" />
+	
+	<span class="detail-name"> {{ place.name }} </span>
+	
+	<div class="star-container">
+	  	<i *ngFor="let n of [1,2,3,4,5]"
+	  	   [ngClass]="{'fas' : place.rating > n || place.rating < n && place.rating > n -.5,
+	  	  			   'fa-star': place.rating > n,
+	  	  			   'fa-star-half': place.rating < n && place.rating > n - 0.5}"></i>
 	</div>
-	<div id="details_right">
-		<p>Business description. Business does things. Great business.</p>
-	</div>
+	
+	<div *ngIf="place.opening_hours.open_now" class="open">OPEN NOW!</div>
+	
+   	<div *ngIf="dollars" class="dollar-container"> 
+   		<span *ngFor="let char of dollars" class="dollar-sign">$</span> 
+   	</div>
+   	
 </div>
